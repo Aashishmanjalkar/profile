@@ -49,7 +49,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Project no</th>
+                        <th scope="col">Project No</th>
                         <th scope="col">Description</th>
                         <th scope="col">Link</th>
                         <th scope="col">Image</th>
