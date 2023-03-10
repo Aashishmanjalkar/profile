@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Philosopher', sans-serif;
+}
+
+/* .navbar{
+    border-bottom: 5px solid #74dfd5;
+}
+.navbarHover{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 19px;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 4px;
+    padding-bottom: 0px;
+
+ }
+.navbarHover::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background: whitesmoke;
+    transition: width 0.3s;
+}
+ .navbarHover:hover::after{
+    width: 50%;
+} */
+
+#image {
+    height: 250px;
+    width: 250px;
+    position: relative;
+}
+
+#image:before {
+    content: "";
+    width: 100px;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: 29px solid red;
+    border-left: 29px solid #eee;
+    border-right: 29px solid #eee;
+}
+
+#image:after {
+    content: "";
+    width: 100px;
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 29px solid red;
+    border-left: 29px solid #eee;
+    border-right: 29px solid #eee;
+}
+
+.hexa,
+.hexa div {
+    margin: 0 auto;
+    transform-origin: 50% 50%;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+}
+
+.hexa {
+    width: 325px;
+    height: 230px;
+}
+
+.hexa div {
+    width: 100%;
+    height: 100%;
+}
+
+.hexa {
+    transform: rotate(120deg);
+}
+
+.hex1 {
+    transform: rotate(-60deg);
+}
+
+.hex2 {
+    transform: rotate(-60deg);
+}
+
+
+.skills {
+    text-align: right;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: white;
+}
+
+.skillContainer {
+    width: 100%;
+    background-color: #ddd;
+}
+
+.html {
+    width: 80%;
+    background-color: #04AA6D;
+}
+
+.css {
+    width: 75%;
+    background-color: #2196F3;
+}
+
+.js {
+    width: 70%;
+    background-color: #f44336;
+}
+
+.jquery {
+    width: 70%;
+    background-color: #d2dc47;
+}
+
+.php {
+    width: 60%;
+    background-color: #da24cb;
+}
+
+.laravel {
+    width: 70%;
+    background-color: #1a0bc6;
+}
+
+.mysql {
+    width: 65%;
+    background-color: #808080;
+}
+
+.from {
+    background-color: rgb(37, 41, 52);
+}
+
+.name {
+    background-color: black;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 10px;
+    color: white;
+
+}
+
+.name::placeholder {
+    color: #eee;
+}
+
+.email {
+    background-color: black;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 4px;
+    color: white;
+}
+
+.email::placeholder {
+    color: #eee;
+}
+
+.message {
+    background-color: black;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 4px;
+    color: white;
+}
+
+.message::placeholder {
+    color: #eee;
+}
+
+.submitButton {
+    height: 40px;
+    width: 100px;
+    /* position: relative;
+    left: 237px; */
+    margin-top: 10px;
+    margin-bottom: 45px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.icons {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 25px;
+
+}
+
+.icon1 {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 50%;
+    outline: 2px solid #fff;
+    transition-property:
+        outline-offset, outline-color,
+        background-color;
+    transition-duration: .25s;
+}
+
+.icon1:hover {
+    outline-offset: 4px;
+}
+
+.icon1:hover i {
+    animation: shake .25s;
+}
+
+.icon--instagram:hover {
+    background-image: radial-gradient(circle at 30% 107%,
+            #fdf497 0%, #fdf497 5%,
+            #fd5949 45%, #d6249f 60%,
+            #285AEB 90%);
+    outline-color: #a02d76;
+}
+
+.icon--twitter:hover {
+    background-color: #1da1f2;
+    outline-color: #1da1f2;
+}
+
+.icon--linkedin:hover {
+    background-color: #0077b5;
+    outline-color: #0077b5;
+}
+
+.icon--github:hover {
+    background-color: #000000;
+    outline-color: #000000;
+}
+
+@keyframes shake {
+    10% {
+        transform: rotate(15deg);
+    }
+
+    20% {
+        transform: rotate(-15deg);
+    }
+
+    30% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(-15deg);
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #21242e;
+    /* border-bottom: 3px solid #74dfd5; */
+    margin-top: 28px;
+}
+
+.navbar h4 {
+    margin-top: 18px;
+    color: aliceblue;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin-top: 19px;
+}
+
+.navbar-links ul li {
+    list-style: none;
+    display: inline-block;
+    /* display should be inline block to add hover effect  */
+}
+
+.navbar-links ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 16px;
+    margin: 25px;
+    cursor: pointer;
+    position: relative;
+
+    /* position should be relative to add after effect */
+}
+
+.navbar-links ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    background: whitesmoke;
+    transition: width 0.3s;
+}
+
+.navbar-links ul li a:hover::after {
+    width: 50%;
+}
+
+/* .project:hover{
+        background-color: #1da1f2;
+} */
