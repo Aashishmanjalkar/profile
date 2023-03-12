@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/canvas/canvas.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/responsive.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body>
@@ -100,11 +101,8 @@
                     @isset($description)
                         <p class="text-dark pt-4 description">{{$description}}</p>
                     @endisset
-                    {{-- <p class="text-dark pt-4 description">I'm an full stack developer from mumbai. I have completed my education in
-                        bachelor of science in statistics.
-                        I'm currently working as software developer (laravel) in Big Rattle technologies .</p> --}}
                     <p class="text-dark" id="link">To Know More Download My resume</p>
-                    <a href="files/resume (2).pdf" class="btn btn-primary" target="_blank">Resume</a>
+                    <a href="files/{{$resume}}" class="btn btn-primary" target="_blank">Resume</a>
                 </div>
 
             </div>
@@ -112,41 +110,15 @@
             <div class="col-lg-6 col-sm-12">
                 <h2 class="text-dark pt-4 pb-4">My Skills</h2>
 
-                <p class="text-dark mb-1">HTML</p>
-                <div class="skillContainer">
-                    <div class="skills html" data-width="80%">80%</div>
-                </div>
-
-                <p class="text-dark mb-1">CSS</p>
-                <div class="skillContainer">
-                    <div class="skills css">75%</div>
-                </div>
-
-                <p class="text-dark mb-1">JavaScript</p>
-                <div class="skillContainer">
-                    <div class="skills js">70%</div>
-                </div>
-
-                <p class="text-dark mb-1">JQuery</p>
-                <div class="skillContainer">
-                    <div class="skills jquery">70%</div>
-                </div>
-
-                <p class="text-dark mb-1">Laravel</p>
-                <div class="skillContainer">
-                    <div class="skills laravel">70%</div>
-                </div>
-
-                <p class="text-dark mb-1">My sql</p>
-                <div class="skillContainer">
-                    <div class="skills mysql">65%</div>
-                </div>
-
-                <p class="text-dark mb-1">PHP</p>
-                <div class="skillContainer">
-                    <div class="skills php">60%</div>
-                </div>
-
+                @isset($skills)
+                    @foreach ($skills as $skill)
+                    <p class="text-dark mb-1">{{strtoupper($skill['name']) }}</p>
+                    <div class="skillContainer">
+                        <div class="skills" style=" width:{{$skill['percentage']}};
+                        background-color: {{$skill['color']}};" >{{$skill['percentage']}}</div>
+                    </div>
+                    @endforeach
+                @endisset
 
             </div>
         </div>
@@ -157,40 +129,13 @@
         <div class="d-flex flex-row flex-wrap projects">
             @isset($projects)
                     @foreach ($projects as $project)
-                    {{-- @php
-                        $url = asset( 'uploads/'.$project['image']);
-
-                    @endphp --}}
                     <div class="project p-2">
                         <img id="project_1" src="{{$project['image']}}" height="250px" width="250px">
-                        <img id="project_1" src="{{asset('uploads/horse.jpg')}}" height="250px" width="250px">
                         <p class="text-dark mb-0">{{$project['description']}}</p>
                         <a href="" class="btn btn-primary">{{$project['link']}}</a>
                     </div>
                     @endforeach
             @endisset
-
-            {{-- <div class="project p-2">
-                <img src="./images/p1.png" height="250px" width="250px">
-                <p class="text-dark">Description</p>
-                <a href="" class="btn btn-primary">To Website</a>
-            </div>
-            <div class="project p-2">
-                <img src="./images/p1.png" height="250px" width="250px">
-            </div>
-            <div class="project p-2">
-                <img src="./images/p1.png" height="250px" width="250px">
-            </div>
-            <div class="project p-2">
-                <img src="./images/p1.png" height="250px" width="250px">
-            </div>
-            <div class="project p-2">
-                <img src="./images/p1.png" height="250px" width="250px">
-            </div>
-            <div class="project p-2">
-                <img src="./images/p1.png" height="250px" width="250px">
-            </div> --}}
-
         </div>
 
     </div>
@@ -239,7 +184,7 @@
 
     <script src="{{ URL::asset('js/canvas/pt.min.js') }}"></script>
     <script src="{{ URL::asset('js/canvas/canvas.js') }}"></script>
-    <script src="{{ URL::asset('js/index.js') }}"></script>
+    <script src="{{ URL::asset('js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>

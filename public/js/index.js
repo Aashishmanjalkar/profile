@@ -20,7 +20,7 @@ $(".update").on('click',function(){
     $("#description").val($(this).attr("data-description"));
     $("#projectUrl").val($(this).attr("data-link"));
     $("#data-id").val($(this).attr("data-id"));
-    url = $("#form").attr("action");
+    // url = $("#form").attr("action");
 });
 
 $(".btn-close, .closeBtn").on('click',function(){
@@ -33,17 +33,17 @@ $(".btn-close, .closeBtn").on('click',function(){
 });
 
 $(".delete").on("click",function(){
-    $("#deleteModule").html($(this).attr("data-description"));
+    $(".deleteModule").html($(this).attr("data-description"));
     $(".delete_id").val($(this).attr("data-id"));
+    url = $(this).attr("data-url");
 });
 
 
 $('#deleteBtn').on("click",function(){
-    console.log("fdfdf",$(this).attr("data-id"));
-    console.log("fdfdfddd",$(".delete_id").val());
+
     $.ajax({
         type:'post',
-        url:'deleteProject',
+        url:url,
         data :{
             '_token':$('meta[name="csrf-token"]').attr('content'),
             'id':$(".delete_id").val()
@@ -53,4 +53,25 @@ $('#deleteBtn').on("click",function(){
             location.reload();
         }
     })
+});
+
+$(".updateSkill").on('click',function(){
+    $("#skillModalLabel").html('Update Skill');
+    $("#addSkillsBtn").html('Update');
+    $("#skillForm").attr("action", window.location.origin+"/updateSkill");
+    $("#skillName").val($(this).attr("data-name"));
+    $("#skillPercentage").val($(this).attr("data-percentage"));
+    $("#color").val($(this).attr("data-color"));
+    $("#data-skill-id").val($(this).attr("data-id"));
+});
+
+
+$(".skill-btn-close, .skillCloseBtn").on('click',function(){
+    $("#skillModalLabel").html('Add Skill');
+    $("#addSkillsBtn").html('Add');
+    $("#form").attr("action", window.location.origin+"/addSkill");
+    $("#skillName").val('');
+    $("#skillPercentage").val('');
+    $("#color").val('');
+    $("#data-skill-id").val('');
 });

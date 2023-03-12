@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +31,12 @@ Route::group(['middleware' => 'auth'],function(){
     Route::post('/addProject',[AdminController::class, 'addProject']);
     Route::post('/updateProject',[AdminController::class, 'updateProject']);
     Route::post('/deleteProject',[AdminController::class, 'deleteProject']);
+
+    Route::post('/updateDescription',[AdminController::class, 'updateDescription']);
+    Route::post('/updateResume',[AdminController::class, 'updateResume']);
+
+    Route::post('/addSkill',[AdminController::class, 'addSkill']);
+    Route::post('/updateSkill',[AdminController::class, 'updateSkill']);
+    Route::post('/deleteSkill',[AdminController::class, 'deleteSkill']);
+
 });
